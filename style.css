@@ -75,6 +75,22 @@ div.jumbotron_description {
     }
 }
 
+@media screen and (max-width: 576px) {
+    div.jumbotron {
+      width: calc(100% - 10px);  
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+    h1.jumbotron_title {
+        font-size: 20pt;
+    }
+
+    div.jumbotron_payoff {
+        font-size: 1.1em;
+    }
+}
+
 .card-title {
     text-align: center;
 }
