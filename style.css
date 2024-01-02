@@ -89,6 +89,10 @@ div.jumbotron_description {
     div.jumbotron_payoff {
         font-size: 1.1em;
     }
+
+    img.jumbotron_logo {
+        display: none;
+    }
 }
 
 .card-title {
