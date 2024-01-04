@@ -1,8 +1,20 @@
-
+/* body {
+    display: flex;
+    flex-direction: column;
+} */
 
 nav {
     background-color: rgb(120, 176, 0);
+    width: 100vw;
+    position: fixed !important;
+    top: 0;
+    z-index: 1;
+    border-bottom: 1px solid green;
 }
+
+/* main {
+    flex: 1;
+} */
 
 a.navbar-brand {
     transition: transform 0.3s ease-in-out;
@@ -26,14 +38,9 @@ a.navbar-brand > img + span {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-/* main {
-    background-color: rgb(255, 255, 153);
-} */
-
 div.jumbotron {
     text-align: center;
     padding: 30px;
-    margin-top: 20px;
     margin-bottom: 20px;
     /* border: 2px solid black;
     box-shadow: 0px 0px 10px rgba(252, 252, 134); */
@@ -45,7 +52,7 @@ h1.jumbotron_title {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: bold;
     font-size: 50pt;
-    text-shadow: 2px 2px 4px rgba(252, 252, 134);
+    text-shadow: 2px 2px 4px rgb(120, 176, 0);
 }
 
 img.jumbotron_logo {
@@ -60,14 +67,73 @@ div.jumbotron_payoff {
     margin-bottom: 8px;
 }
 
-div.jumbotron_description {
-    text-align: justify;
-    font-style: italic;
-}
-
 .card-title {
     text-align: center;
 }
+
+.card-body {
+    background-color: rgba(120, 176, 0, 0.233);
+}
+
+#welcomeSummer + div h5.card-title {
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+#welcomeSummer + div div.card {
+    box-shadow: 0px 0px 5px rgb(120, 176, 0);
+}
+
+#offertaDelGiorno + div {
+    height: 50vh;
+}
+
+#offertaDelGiorno + div > * {
+    height: 100%;
+}
+
+#offertaDelGiorno + div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    padding: 2px;
+    border: 2px solid rgb(120, 176, 0);
+}
+
+#offertaDelGiorno + div div.col-4 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#offertaDelGiorno + div div.col-4 div:first-child {
+    font-size: 20pt;
+    font-weight: bold;
+    color: red;
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 0.5rem;
+}
+
+#offertaDelGiorno + div div.col-4 textarea {
+    flex: 1;
+    border: none;
+    margin: 10px 0;
+}
+
+/* Setting titles of every sections */
+h4.section_title {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-shadow: 1px 1px 1px rgb(120, 176, 0);
+}
+
+footer {
+    height: 30px;
+}
+
+/* Spaces for media queries. */
 
 @media screen and (max-width: 992px) {
     div.jumbotron {
@@ -82,6 +148,24 @@ div.jumbotron_description {
 
     div.jumbotron_payoff {
         font-size: 1.2em;
+    }
+
+    #welcomeSummer + div img {
+        height: 200px;
+    }
+
+    #offertaDelGiorno + div {
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #offertaDelGiorno + div {
+        height: 30vh;
+    }
+
+    #offertaDelGiorno + div div.col-4 {
+        font-size: 0.8em;
     }
 }
 
@@ -104,11 +188,12 @@ div.jumbotron_description {
         display: none;
     }
 
-    #offertaDellaSettimana + div h5.card-title {
+    #offertaDellaSettimana + div h5.card-title, #welcomeSummer + div h5.card-title {
         font-size: 0.9rem;
+        white-space: normal;
     }
 
-    #offertaDellaSettimana + div img {
+    #offertaDellaSettimana + div img, #welcomeSummer + div img {
         height: 125px;
     }
 
@@ -116,4 +201,13 @@ div.jumbotron_description {
         padding-bottom: 10px;
         
     }
+
+    #offertaDelGiorno + div div.col-4 {
+        font-size: 0.6em;
+    }
+
+    /* Comment if u want to delete "Offerta del Giorno" for mobile*/
+    /* #offertaDelGiorno, #offertaDelGiorno + div {
+        display: none;
+    } */
 }
