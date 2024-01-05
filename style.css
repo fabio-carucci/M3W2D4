@@ -10,7 +10,7 @@ nav {
     width: 100vw;
     position: fixed !important;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     border-bottom: 1px solid green;
 }
 
@@ -19,16 +19,16 @@ a.navbar-brand {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+a.navbar-brand:hover {
+    transform: scale(1.1);
+}
+
 #navbarSupportedContent ul li a{
     color: whitesmoke;
 }
 
 #navbarSupportedContent ul li a:hover{
     color: black;
-}
-
-a.navbar-brand:hover {
-    transform: scale(1.1);
 }
 
 a.navbar-brand > img + span {
@@ -75,6 +75,17 @@ div.jumbotron_payoff {
     background-color: rgba(120, 176, 0, 0.233);
 }
 
+/* Offerta della settimana section */
+
+#offertaDellaSettimana + div div.col {
+    transition: transform 0.3s ease-in-out;
+}
+
+#offertaDellaSettimana + div div.col:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 /* Welcome Summer section */
 
 #welcomeSummer + div h5.card-title {
@@ -84,12 +95,18 @@ div.jumbotron_payoff {
 
 #welcomeSummer + div div.card {
     box-shadow: 0px 0px 5px rgb(120, 176, 0);
+    transition: transform 0.3s ease-in-out;
+}
+
+#welcomeSummer + div div.col:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* Offerta del Giorno Section */
 
 #offertaDelGiorno + div {
-    height: 50vh;
+    height: 350px;
 }
 
 #offertaDelGiorno + div > * {
@@ -138,9 +155,17 @@ div.jumbotron_payoff {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 0.8;
     border-radius: 10px;
     position: relative;
+    transition: transform 0.3s ease-in-out;
+    filter: opacity(0.9);
+}
+
+#lastMinute + div div.col:hover img {
+    transform: scale(1.05);
+    filter: opacity(1);
+    filter: brightness(1.1);
+    cursor: pointer;
 }
 
 #lastMinute + div div.col span {
@@ -155,16 +180,42 @@ div.jumbotron_payoff {
     text-shadow: 1px 1px 1px black;
 }
 
+/* Testimonial section */
+
+#testimonial + div .card {
+    border: 1px solid rgb(120, 176, 0);
+}
+
+#testimonial + div .card-header {
+    border-bottom: 1px solid rgb(120, 176, 0);
+    background-color: white;
+    font-weight: bold;
+    
+}
+
+#testimonial + div .card-body {
+    background-color: rgba(120, 176, 0, 0.233);
+    height: 100px;
+}
+
+#testimonial + div .card-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+}
+
 /* Setting titles of every sections */
 h4.section_title {
     text-decoration: underline;
     text-underline-offset: 0.2em;
-    text-shadow: 1px 1px 1px rgb(120, 176, 0);
 }
 
-footer {
-    height: 30px;
+h4.section_title:hover {
+    cursor: pointer;
 }
+
 
 /* Spaces for media queries. */
 
@@ -188,7 +239,7 @@ footer {
     }
 
     #offertaDelGiorno + div {
-        height: 40vh;
+        height: 300px;
     }
 
     #lastMinute + div div.col span {
@@ -198,7 +249,7 @@ footer {
 
 @media screen and (max-width: 768px) {
     #offertaDelGiorno + div {
-        height: 30vh;
+        height: 250px;
     }
 
     #offertaDelGiorno + div div.col-4 {
@@ -247,6 +298,11 @@ footer {
         padding-bottom: 10px;
         
     }
+
+    #offertaDelGiorno + div {
+        height: 200px;
+    }
+
 
     #offertaDelGiorno + div div.col-4 div:first-child {
         font-size: 10pt;
