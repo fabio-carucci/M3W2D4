@@ -1,3 +1,10 @@
+main {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+/* navbar section */
+
 nav {
     background-color: rgb(120, 176, 0);
     width: 100vw;
@@ -5,11 +12,6 @@ nav {
     top: 0;
     z-index: 1;
     border-bottom: 1px solid green;
-}
-
-main {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
 }
 
 a.navbar-brand {
@@ -33,6 +35,8 @@ a.navbar-brand > img + span {
     font-weight: bold;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+/* Jumbotron section */
 
 div.jumbotron {
     text-align: center;
@@ -71,6 +75,8 @@ div.jumbotron_payoff {
     background-color: rgba(120, 176, 0, 0.233);
 }
 
+/* Welcome Summer section */
+
 #welcomeSummer + div h5.card-title {
     font-size: 1rem;
     white-space: nowrap;
@@ -79,6 +85,8 @@ div.jumbotron_payoff {
 #welcomeSummer + div div.card {
     box-shadow: 0px 0px 5px rgb(120, 176, 0);
 }
+
+/* Offerta del Giorno Section */
 
 #offertaDelGiorno + div {
     height: 50vh;
@@ -118,6 +126,35 @@ div.jumbotron_payoff {
     margin: 10px 0;
 }
 
+/* last Minute section */
+
+#lastMinute + div div.col {
+    height: 100px;
+    position: relative;
+}
+
+#lastMinute + div div.col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.8;
+    border-radius: 10px;
+    position: relative;
+}
+
+#lastMinute + div div.col span {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}
+
 /* Setting titles of every sections */
 h4.section_title {
     text-decoration: underline;
@@ -153,6 +190,10 @@ footer {
     #offertaDelGiorno + div {
         height: 40vh;
     }
+
+    #lastMinute + div div.col span {
+        font-size: 11pt;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -162,6 +203,10 @@ footer {
 
     #offertaDelGiorno + div div.col-4 {
         font-size: 0.8em;
+    }
+
+    #lastMinute + div div.col span {
+        font-size: 11pt;
     }
 }
 
@@ -209,6 +254,10 @@ footer {
 
     #offertaDelGiorno + div div.col-4 {
         font-size: 0.6em;
+    }
+
+    #lastMinute + div div.col span {
+        font-size: 7pt;
     }
 
     /* Comment if u want to delete "Offerta del Giorno" for mobile*/
