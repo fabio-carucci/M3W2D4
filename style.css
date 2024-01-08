@@ -206,7 +206,52 @@ div.jumbotron_payoff {
     text-overflow: ellipsis;
 }
 
+/* Footer section */
+
+footer > div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    column-gap: 5px;
+}
+
+footer a:first-of-type {
+    text-decoration: none;
+    color: #333;
+}
+
+footer a[href^="tel:"] {
+    text-decoration: none;
+    color: #333;
+}
+
+footer a[href^="tel:"]:hover {
+    color: rgb(120, 176, 0);;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: rgb(120, 176, 0);
+    --bs-tooltip-color: white;
+}
+
+footer > div:nth-of-type(2) {
+    border-top: 1px solid rgb(120, 176, 0);
+    background-color: rgba(120, 176, 0, 0.233);
+}
+
+footer > div:nth-of-type(3) {
+    background-color: rgba(120, 176, 0, 0.233);
+}
+
+footer i {
+    cursor: pointer;
+}
+  
 /* Setting titles of every sections */
+
 h4.section_title {
     text-decoration: underline;
     text-underline-offset: 0.2em;
@@ -316,8 +361,21 @@ h4.section_title:hover {
         font-size: 7pt;
     }
 
+    footer > div:nth-of-type(2) {
+        flex-direction: column;
+        align-items: center;
+    }
+
     /* Comment if u want to delete "Offerta del Giorno" for mobile*/
-    /* #offertaDelGiorno, #offertaDelGiorno + div {
+    #offertaDelGiorno, #offertaDelGiorno + div {
         display: none;
-    } */
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    h1.jumbotron_title {
+        font-size: 25pt;
+    }
+
 }

@@ -1,3 +1,6 @@
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
 //Set the starting point of the main content based on the variable height of the fixed-position navbar
 document.querySelector('main').style.marginTop = document.querySelector('nav.navbar').offsetHeight + 20 + 'px';
 
@@ -17,6 +20,15 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 
+// Collapse the navbar menu if the user clicks outside while it's in the "show" state.
+document.addEventListener('mouseup', (event) => {
+    var navbar = document.querySelector('.navbar-collapse');
+    if (navbar.classList.contains('show') && !navbar.contains(event.target)) {
+        document.querySelector('.navbar-collapse').classList.remove('show');
+    }
+});
+
+//Object of last Minute images and their url for cards
 let lastMinuteImages = [
     { name: "SVALBARD", url: "https://mediaim.expedia.com/destination/1/99ab483f8a6c8cdde760150d34bac04e.jpg" },
     { name: "SAN FRANCISCO", url: "https://images.ctfassets.net/bth3mlrehms2/5D89r4pwpt9FyGctr3sOcP/b5d8c3dc072812ed8c3f5381ba290fc9/Nordamerika_USA_San_Francisco_Golden_Gate_Bridge.jpg?w=3863&h=2578&fl=progressive&q=50&fm=jpg" },
@@ -29,6 +41,7 @@ let lastMinuteImages = [
     { name: "AGRA", url: "https://static.ohga.it/wp-content/uploads/sites/24/2021/04/iStock-1152168512.jpg" },
 ];
 
+// Function that creates 'last-minute' cards based on the object.
 function createLastMinuteImages() {
     let container = document.querySelector('#lastMinute + div');
 
@@ -49,9 +62,4 @@ function createLastMinuteImages() {
     }
 }
 
-
 createLastMinuteImages();
-
-
-
-  
